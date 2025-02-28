@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    
+    <!-- For Font  -->    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- CSS Input Without Seperate File -->
+    <style>
+        :root {
+            --primary: #64ffda;
+            --bg: #0a192f;
+            --text: #8892b0;
+            --card-bg: #112240;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Profile Section */
+        .profile-section {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            min-height: 100vh;
+            padding: 4rem 0;
+        }
+
+        .profile-photo {
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary);
+            animation: float 6s ease-in-out infinite;
+            box-shadow: 0 0 30px rgba(100, 255, 218, 0.2);
+        }
+
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, var(--primary), transparent);
+            animation: shine 4s infinite;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+
+        /* Skills Section */
+        .skills-section {
+            margin: 4rem 0;
+            padding: 2rem 0;
+        }
+
+        .skill-container {
+            margin: 2rem 0;
+        }
+
+        .skill-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+
+        .skill-bar {
+            height: 10px;
+            background: rgba(100, 255, 218, 0.1);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: var(--primary);
+            border-radius: 5px;
+            width: 0;
+            transition: width 1.5s ease-out;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            text-align: center;
+            padding: 4rem 0;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-icon {
+            font-size: 2.5rem;
+            color: var(--text);
+            transition: all 0.3s ease;
+        }
+
+        .contact-icon:hover {
+            transform: translateY(-3px);
+        }
+
+        .fa-linkedin:hover { color: #0A66C2; }
+        .fa-github:hover { color: #fff; }
+        .fa-envelope:hover { color: #EA4335; }
+
+        /* Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes shine {
+            to {
+                transform: translateX(100%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Profile Section -->
+        <section class="profile-section">
+            <img src="owner.jpg" alt="Sohail Shaikh" class="profile-photo">
+            <div class="profile-content">
+                <h1 style="color: var(--primary); font-size: 3rem; margin-bottom: 1.5rem;">
+                    Hi, I'm <span style="color: #fff; font-family: 'Brush Script MT', cursive;">Sohail S. Shaikh</span> 👋
+                </h1>
+                <p style="font-size: 4.8rem; max-width: 600px; line-height: 2;"></p>
+                    🚀 An AI/ML engineer with vast interests in intelligent systems that steer innovations to solve everyday problems truly describes me. My expertise, however, centers on Machine Learning, Web Development, and Full-Stack Development to build solutions using AI to transfer industries 
+                    <br>Currently honing skills through the Codveda internship program 🚀
+                </p>
+            </div>
+        </section>
+
+    <section id="projects">
+                <!-- Projects Section -->
+                <h2 style="color: var(--primary); text-align: center; font-size: 2.5rem;">
+                    Featured Projects
+                </h2>
+                <div class="projects-grid">
+                    <div class="project-card" onclick="window.open('https://sohailfc.netlify.app/', '_blank')" style="cursor: pointer;">
+                        <h3 style="color: #fff; margin-bottom: 1rem; text-align: center;">Sohail FC</h3>
+                        <p>I developed the official website for Sohail FC, a football club established in 2008. The project focused on creating a responsive and user-friendly platform that reflects the club's philosophy and connects with its community. Key features included a responsive design using CSS Grid and Flexbox, dynamic navigation with hover effects, a responsive image gallery, a functional contact form, and an engaging About Us section.</p>
+                    </div>
+                    
+                    <div class="project-card" onclick="window.open('https://sohailweatherweb.netlify.app/', '_blank')" style="cursor: pointer;">
+                        <h3 style="color: #fff; margin-bottom: 1rem; text-align: center;"">Weather Website</h3>
+                        <p>Sohail Weather Web is a responsive weather application that provides real-time weather data in a clean, intuitive layout. The site allows users to search for weather updates by city and displays current conditions—such as temperature, humidity, and wind speed—using a modern design. The clear typography and well-organized interface make it easy to navigate and quickly access essential weather information.</p>
+                    </div>
+                </div>
+        
+                <!-- Skills Section -->
+                <section class="skills-section">
+                    <h2 style="color: var(--primary); text-align: center; font-size: 2.5rem; margin-bottom: 3rem;">
+                        Technical Skills
+                    </h2>
+                    
+                    <div class="skill-container">
+                        <div class="skill-label">
+                            <span>HTML/CSS</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="max-width: 90%"></div>
+                        </div>
+                    </div>
+        
+                    <div class="skill-container">
+                        <div class="skill-label">
+                            <span>JavaScript</span>
+                            <span>55%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="max-width: 55%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-container">
+                        <div class="skill-label">
+                            <span>ReactJS</span>
+                            <span>50%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="max-width: 50%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-container">
+                        <div class="skill-label">
+                            <span>Bootstrap</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="max-width: 75%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-container">
+                        <div class="skill-label">
+                            <span>Node.js</span>
+                            <span>35%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="max-width: 35%"></div>
+                        </div>
+                    </div>
+                </section>
+        
+    </section>
+        <!-- Contact Section -->
+        <section class="contact-section">
+            <h2 style="color: var(--primary); font-size: 2.5rem; margin-bottom: 2rem;">
+                Let's Connect!
+            </h2>
+            <div class="contact-links">
+                <a href="https://www.linkedin.com/in/sohail-shaikh-14d/" target="_blank" class="contact-icon">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="mailto:sohail.shaikh14d@gmail.com" class="contact-icon">
+                    <i class="fas fa-envelope"></i>
+                </a>    
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Animate skill bars on scroll
+        const animateBars = () => {
+            const skills = document.querySelectorAll('.skill-progress');
+            skills.forEach(skill => {
+                const width = skill.style.maxWidth;
+                skill.style.width = width;
+            });
+        };
+
+        // Trigger animation when skills section is in view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    animateBars();
+                }
+            });
+        });
+
+        observer.observe(document.querySelector('.skills-section'));
+    </script>
+</body>
+</html>
